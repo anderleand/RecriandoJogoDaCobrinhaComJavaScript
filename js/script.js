@@ -1,3 +1,7 @@
+const colorBG = 'black';
+const colorSnake = 'green';
+const colorFood = 'red';
+
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32;
@@ -15,19 +19,19 @@ let food = {
 }
 
 function criaBG() {
-    context.fillStyle = "lightgreen";
+    context.fillStyle = colorBG;
     context.fillRect(0, 0, 16 * box, 16 * box)
 }
 
 function criaCobrinha() {
     for (i = 0; i < snake.length; i++) {
-        context.fillStyle = "green";
+        context.fillStyle = colorSnake;
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
 function drawFood() {
-    context.fillStyle = "red"
+    context.fillStyle = colorFood;
     context.fillRect(food.x, food.y, box, box);
 }
 
